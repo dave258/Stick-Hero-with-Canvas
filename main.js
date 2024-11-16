@@ -1,22 +1,18 @@
-
-
 // Extend the base functionality of JavaScript
 Array.prototype.last = function () {
   return this[this.length - 1];
 };
 
-// A sinus function that acceps degrees instead of radians
 Math.sinus = function (degree) {
   return Math.sin((degree / 180) * Math.PI);
 };
 
 // Game data
-let phase = "waiting"; // waiting | stretching | turning | walking | transitioning | falling
-let lastTimestamp; // The timestamp of the previous requestAnimationFrame cycle
-
-let heroX; // Changes when moving forward
-let heroY; // Only changes when falling
-let sceneOffset; // Moves the whole game
+let phase = "waiting"; 
+let lastTimestamp; 
+let heroX; 
+let heroY; 
+let sceneOffset; 
 
 let platforms = [];
 let sticks = [];
@@ -252,7 +248,7 @@ function animate(timestamp) {
         sticks.push({
           x: nextPlatform.x + nextPlatform.w,
           length: 0,
-          rotation: 0
+          rotation: 0,
         });
         phase = "waiting";
       }
